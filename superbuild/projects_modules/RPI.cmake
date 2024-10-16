@@ -41,7 +41,12 @@ if (NOT USE_SYSTEM_${ep})
 ## #############################################################################
 
 set(git_url ${GITHUB_PREFIX}Inria-Asclepios/RPI.git)
-set(git_tag RPI_INTERFACE)
+if(${USE_LASTEST_RPI})
+  set(git_tag master)
+else()
+  set(git_tag RPI_INTERFACE)
+endif()
+
 ## #############################################################################
 ## Add specific cmake arguments for configuration step of the project
 ## #############################################################################

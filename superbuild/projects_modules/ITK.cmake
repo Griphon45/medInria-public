@@ -37,10 +37,12 @@ if (NOT USE_SYSTEM_${ep})
 ## #############################################################################
 ## Set up versioning control
 ## #############################################################################
-
-
 set(git_url ${GITHUB_PREFIX}InsightSoftwareConsortium/ITK.git)
-set(git_tag v5.1.1)
+if(${USE_LASTEST_ITK})
+  set(git_tag master)
+else()
+  set(git_tag v5.1.1)
+endif()
 
 
 ## #############################################################################
@@ -78,7 +80,7 @@ set(cmake_cache_args
 ## Check if patch has to be applied
 ## #############################################################################
   
-ep_GeneratePatchCommand(${ep} ${ep}_PATCH_COMMAND ITK.patch)
+# ep_GeneratePatchCommand(${ep} ${ep}_PATCH_COMMAND ITK.patch)
 
 ## #############################################################################
 ## Add external-project

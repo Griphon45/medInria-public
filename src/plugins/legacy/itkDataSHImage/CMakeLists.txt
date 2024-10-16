@@ -38,10 +38,6 @@ include(${ITK_USE_FILE})
 find_package(VTK REQUIRED COMPONENTS vtkCommonExecutionModel vtkRenderingCore vtkInteractionWidgets)
 include(${VTK_USE_FILE})
 
-if (APPLE OR WIN32)
-    find_package(Boost REQUIRED)
-endif()
-
 ## #############################################################################
 ## List Sources
 ## #############################################################################
@@ -66,7 +62,6 @@ list_header_directories_to_include(${TARGET_NAME}
 
 include_directories(${${TARGET_NAME}_INCLUDE_DIRS}
   ${MEDINRIA_INCLUDE_DIRS}
-  ${Boost_INCLUDE_DIR}
   )
 
 
